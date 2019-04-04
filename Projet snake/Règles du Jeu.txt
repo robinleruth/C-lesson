@@ -1,0 +1,17 @@
+Dans le jeu du SNAKE, vous controlez un petit serpent a l'aide des touches :
+o : aller vers le haut
+l : aller vers le bas
+k : aller vers la gauche
+m : aller vers la droite
+
+Le but du jeu est de faire le plus haut score possible.
+Vous augmentez votre score en mangeant des pommes (le serpent grandit
+à chaque pomme mangee), et en restant en vie le plus longtemps possible.
+
+Vous perdez si :
+- le serpent mange sa propre queue.
+- le serpent rentre dans un mur.
+
+Si vous souhaitez quitter en pleine partie : appuyez sur la touche 'q'.
+
+Bon courage !
