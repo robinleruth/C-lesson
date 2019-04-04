@@ -1,0 +1,34 @@
+EIP : extended instruction pointer
+ESP : extended stack pointer
+EBP : extended base pointer
+
+Quand un programme se lance, une plage mémoire est réservée pour celui-ci.
+Cette mémoire est divisée en 5 segments : text, data, bss, heap et stack
+
+-text (ou code) : sert à stocker les instructions machines du programme. 
+EIP pointe vers la 1ère instruction au démarrage, puis le processeur exécute la boucle :
+1) lire l'instruction vers laquelle EIP pointe
+2) On ajoute la longueur de l'instruction à EIP (passer à l'instruction suivant)
+3) On exécute l'instruction lue à la 1re page
+4) On recommence
+
+- data : stocke des variables globales (les chaines de caractère, les variables initialisées et les constantes globales
+- bss : stocke le reste des variables globales.
+La longueur de ces deux segments sont fixes.
+
+- heap : stocke des variables dynamiques. Le heap grandit vers les adresses mémoire plus grandes.
+
+- stack : bloc note temporaire pendant les appels de fonctions. Quand un programme appelle
+une fonction, les variables passées à la fonction et les variables de la fonction s'ajoutent à la pile.
+De plus, EIP doit changer de position dans le text, car il doit pointer vers le code de la fonction.
+La position où EIP doit retourner est aussi mémorisée dans le stack.
+Contrairement au heap, la pile grandit dans le sens des adresses décroissantes
+Quand une fonction est appellée, on push les données précisées ci-dessus dans la pile. Toutes
+ces données ajoutées d'un coup forment ce qu'on appelle stack frame, ou bloc de pile.
+La pile est au finale formée d'un ensemble de blocs. Le registre EBP, appellé aussi FP (frame pointer),
+sert à référencer les différentes variables de chaque bloc.
+On accède aux différentes variables en additionnant ou en soustrayant d'EBP. Les deux premières
+variables ajoutées à un bloc, après les arguments, sont nécessaires au bon déroulement du programme :
+le SFP, saved frame pointer, garde en mémoire la positin antérierieure (et ultérieure, après le popping)
+de l'EBP, et le RA, return addresse, le pointeur vers l'adresse de retour (la prochaine valeur de 
+l'EIP, donc la prochaine instruction après l'appel de la fonction).
