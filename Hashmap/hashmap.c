@@ -228,7 +228,7 @@ int hashmap_get_one(map_t in, any_t *arg, int remove){
 	/* Linear probing */
 	for(i = 0; i< m->table_size; i++)
 		if(m->data[i].in_use != 0){
-			*arg = (any_t) (m->data[i].data);
+			arg = (any_t) (m->data[i].data);
 			if (remove) {
 				m->data[i].in_use = 0;
 				m->size--;
