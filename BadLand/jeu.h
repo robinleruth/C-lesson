@@ -1,6 +1,8 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 
+#include "include.h"
+
 t_player *CreerElement(t_player *exemple);
 int Perdu(t_liste *ancre);
 void CollisionJoueur(t_liste *ancre, int taille);

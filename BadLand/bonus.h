@@ -2,6 +2,8 @@
 #define BONUS_H_INCLUDED
 
 #include "include.h"
+#include "struct.h"
+
 t_collec *AllouerCollec(BITMAP *sprite[6], int niveau);
 void LibererCollec(t_collec *collec);
 
