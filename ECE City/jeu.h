@@ -1,16 +1,7 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 
-typedef struct jeu
-{
-    int **matrice;
-    t_batiments *batiments;
-    t_structRoute *ensembleRoutes;
-    t_chateaux *chateaux;
-    t_centrales *centrales;
-    int choix_menu;
-    int mode;
-} t_jeu;
+#include "include.h"
 
 int **AllouerMatrice();
 

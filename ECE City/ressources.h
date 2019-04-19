@@ -1,33 +1,7 @@
 #ifndef RESSOURCES_H_INCLUDED
 #define RESSOURCES_H_INCLUDED
 
-typedef struct eau
-{
-    t_position *coord;
-    int qtEau;
-} t_eau;
-
-typedef struct chateau
-{
-    t_eau **chateaux;
-    int nb_chateaux;
-    int tailleTableauChateau;
-    BITMAP *image;
-} t_chateaux;
-
-typedef struct elec
-{
-    t_position *coord;
-    int qtElec;
-} t_elec;
-
-typedef struct centrale
-{
-    t_elec **centrales;
-    int nb_centrales;
-    int tailleTableauCentrale;
-    BITMAP *image;
-} t_centrales;
+#include "include.h"
 
 t_eau *CreerChateauDEau();
 

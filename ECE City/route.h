@@ -1,17 +1,7 @@
 #ifndef ROUTE_H_INCLUDED
 #define ROUTE_H_INCLUDED
 
-typedef struct routes
-{
-    struct position* coord;
-} t_routes;
-
-typedef struct structRoute
-{
-    t_routes **routes;
-    int nbroute;
-    BITMAP **bibliroute;
-} t_structRoute;
+#include "include.h"
 
 
 t_routes** ajouter_route(int* nbroutes, t_routes** routes, int** grille,int x, int y);

@@ -6,14 +6,6 @@
 #include <string.h>
 #include <time.h>
 #include "allegro.h"
-#include "route.h"
-#include "habitation.h"
-#include "batiments.h"
-#include "graphe.h"
-#include "ressources.h"
-#include "jeu.h"
-#include "affichage.h"
-#include "allegro.h"
 
 extern BITMAP * calque_batiment;
 extern BITMAP * calque_grille;
@@ -63,6 +55,90 @@ extern BITMAP * buffer;
 #define CASE_RESSOURCES_X 4
 #define CASE_RESSOURCES_Y 6
 
+typedef struct position
+{
+    int x;
+    int y;
+} t_position;
+
+typedef struct habitation
+{
+    t_position* coord;
+    int population;
+    int stade;
+    int temps_initial;
+    int eau;
+    int elec;
+} t_habitation;
+
+typedef struct batiments
+{
+    struct habitation **habitations;
+    int nb_habitation;
+    int tailleTableau;
+    BITMAP **imagesBatiments;
+} t_batiments;
+
+
+typedef struct eau
+{
+    t_position *coord;
+    int qtEau;
+} t_eau;
+
+typedef struct chateau
+{
+    t_eau **chateaux;
+    int nb_chateaux;
+    int tailleTableauChateau;
+    BITMAP *image;
+} t_chateaux;
+
+typedef struct elec
+{
+    t_position *coord;
+    int qtElec;
+} t_elec;
+
+typedef struct centrale
+{
+    t_elec **centrales;
+    int nb_centrales;
+    int tailleTableauCentrale;
+    BITMAP *image;
+} t_centrales;
+
+typedef struct routes
+{
+    struct position* coord;
+} t_routes;
+
+typedef struct structRoute
+{
+    t_routes **routes;
+    int nbroute;
+    BITMAP **bibliroute;
+} t_structRoute;
+
+typedef struct jeu
+{
+    int **matrice;
+    t_batiments *batiments;
+    t_structRoute *ensembleRoutes;
+    t_chateaux *chateaux;
+    t_centrales *centrales;
+    int choix_menu;
+    int mode;
+} t_jeu;
+
+#include "route.h"
+#include "habitation.h"
+#include "batiments.h"
+#include "graphe.h"
+#include "ressources.h"
+#include "jeu.h"
+#include "affichage.h"
+#include "allegro.h"
 
 #endif // INCLUDE_H_INCLUDED
 

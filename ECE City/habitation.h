@@ -1,21 +1,7 @@
 #ifndef HABITATION_H_INCLUDED
 #define HABITATION_H_INCLUDED
 
-typedef struct position
-{
-    int x;
-    int y;
-} t_position;
-
-typedef struct habitation
-{
-    t_position* coord;
-    int population;
-    int stade;
-    int temps_initial;
-    int eau;
-    int elec;
-} t_habitation;
+#include "include.h"
 
 t_habitation *CreerHabitation();
 

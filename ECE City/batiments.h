@@ -1,13 +1,7 @@
 #ifndef BATIMENTS_H_INCLUDED
 #define BATIMENTS_H_INCLUDED
 
-typedef struct batiments
-{
-    struct habitation **habitations;
-    int nb_habitation;
-    int tailleTableau;
-    BITMAP **imagesBatiments;
-} t_batiments;
+#include "include.h"
 
 
 t_batiments *AllouerBatiments();
